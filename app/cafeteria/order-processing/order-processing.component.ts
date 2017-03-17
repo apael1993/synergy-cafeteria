@@ -1,7 +1,8 @@
 /**
  * Created by Anushavan on 3/17/17.
  */
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
+import {DeService} from "./../../shared/impl/de.service";
 
 @Component({
     moduleId: module.id,
@@ -10,8 +11,14 @@ import {Component} from "@angular/core";
     styleUrls: ["order-processing.component.css"],
 })
 
-export class OrderProcessingComponent {
+export class OrderProcessingComponent implements OnInit {
+    
+    private order: Order;
 
-    constructor() { }
+    constructor(private deService: DeService) { }
+    
+    ngOnInit() {
+        
+    }
     
 }
