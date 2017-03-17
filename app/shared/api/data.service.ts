@@ -9,11 +9,7 @@ import {Observable} from "rxjs/Rx";
 export abstract class DataService {
 
     public abstract loadOrder(): Observable<any>;
-    
-    public abstract addOrder(data: any): Observable<any>;
 
     public abstract updateOrder(data: any): Observable<any>;
-
-    public abstract deleteOrder(): Observable<any>;
 
 }

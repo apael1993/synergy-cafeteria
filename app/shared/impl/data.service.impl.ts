@@ -2,8 +2,8 @@
  * Created by Anushavan on 3/17/17.
  */
 import {Injectable} from "@angular/core";
-import {Http, Headers, RequestOptions, Response, URLSearchParams} from "@angular/http";
-import {DeSerializationService} from "./serialization.service.ts";
+import {Http, Headers, RequestOptions, Response} from "@angular/http";
+import {DeSerializationService} from "./serialization.service";
 import {DataService} from "../api/data.service";
 import {Order} from "./../model/order";
 import {Observable} from "rxjs/Rx";

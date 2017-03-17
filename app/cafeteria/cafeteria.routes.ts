@@ -4,11 +4,18 @@
 import {Routes, RouterModule} from "@angular/router";
 import {ModuleWithProviders} from "@angular/core";
 import {CafeteriaComponent} from "./cafeteria.component";
+import {OrderProcessingComponent} from "./order-processing/order-processing.component";
 
 const cafeteriaRoutes: Routes = [
         {
             path: "cafeteria",
-            component: CafeteriaComponent
+            component: CafeteriaComponent,
+            children: [
+                {
+                    path: "order-processing",
+                    component: OrderProcessingComponent
+                }
+            ]
         }
  ];
 

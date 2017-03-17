@@ -2,6 +2,7 @@
  * Created by Anushavan on 3/17/17.
  */
 import {Component} from "@angular/core";
+import {Router} from "@angular/router";
 
 @Component({
     moduleId: module.id,
@@ -12,5 +13,9 @@ import {Component} from "@angular/core";
 
 export class CafeteriaComponent {
 
-    constructor() { }
+    constructor(private router: Router) { }
+
+    private navigateTo(path: string) {
+        this.router.navigate([path]);
+    }
 }

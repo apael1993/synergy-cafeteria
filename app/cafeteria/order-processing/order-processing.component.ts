@@ -2,7 +2,7 @@
  * Created by Anushavan on 3/17/17.
  */
 import {Component, OnInit} from "@angular/core";
-import {DataServiceImpl} from "../../shared/impl/data.service.impl.ts";
+import {DataServiceImpl} from "../../shared/impl/data.service.impl";
 import {Order} from "../../shared/model/order";
 
 @Component({
