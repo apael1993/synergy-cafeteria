@@ -1,7 +1,11 @@
 /**
  * Created by Anushavan on 3/17/17.
  */
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
+import {DishType} from "../../../shared/model/dish-type";
+import any = jasmine.any;
+import {Dish} from "../../../shared/model/dish";
+import {ItemViewInMenuComponent} from "../shared/item-view-in-menu/item-view-in-menu.component";
 
 @Component({
     moduleId: module.id,
@@ -10,8 +14,21 @@ import {Component} from "@angular/core";
     styleUrls: ["standard-menu.component.css"],
 })
 
-export class StandardMenuComponent {
+export class StandardMenuComponent implements OnInit{
+     private availableDishesInStandardMenuByDishTypeId: Dish[] = [];
 
-    constructor() { }
+    private itemViews: ItemViewInMenuComponent[] = [];
+
+     constructor() { }
+
+
+     ngOnInit(): void {
+     }
+
+     getDishTypes(): DishType[]{
+      return [];
+     }
+
+
     
 }

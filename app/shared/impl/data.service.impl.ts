@@ -7,6 +7,7 @@ import {DeSerializationService} from "./serialization.service";
 import {DataService} from "../api/data.service";
 import {Order} from "./../model/order";
 import {Observable} from "rxjs/Rx";
+import {Dish} from "../model/dish";
 
 @Injectable()
 export class DataServiceImpl implements DataService {
@@ -37,6 +38,16 @@ export class DataServiceImpl implements DataService {
     public deleteOrder(): Observable<any> {
         return null;
     }
+
+    public loadDishTypes(): Observable<any>{
+        return null;
+    }
+
+    public loadDishesByType(_dishTypeId: any): Observable<Dish[]>{
+        return null;
+    }
+
+
 
     private static extractResponseData(response: Response): any {
         let body: any = response.json();
