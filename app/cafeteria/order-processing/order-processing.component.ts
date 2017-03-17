@@ -30,5 +30,9 @@ export class OrderProcessingComponent implements OnInit {
             this.dishTypes = dishTypes;
         })
     }
-    
+
+    private nextOrder(): void {
+        this.dataService.updateOrder({"_id": this.order.getId()});
+    }
+
 }
