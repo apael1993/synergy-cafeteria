@@ -12,6 +12,8 @@ import {MyOrdersComponent} from "./my-orders/my-orders.component";
 import {StandardMenuComponent} from "./ordering/standard-menu/standard-menu.component";
 import {CustomMenuComponent} from "./ordering/custom-menu/custom-menu.component";
 import {TodayDealsComponent} from "./ordering/today-deals/today-deals.component";
+import {TabsComponent} from "../shared/controls/tabs/sis-tabs.component";
+import {TabComponent} from "../shared/controls/tabs/sis-tab.component";
 
 @NgModule({
     imports: [
@@ -26,7 +28,9 @@ import {TodayDealsComponent} from "./ordering/today-deals/today-deals.component"
         MyOrdersComponent,
         StandardMenuComponent,
         CustomMenuComponent,
-        TodayDealsComponent
+        TodayDealsComponent,
+        TabComponent,
+        TabsComponent
     ],
 })
 
