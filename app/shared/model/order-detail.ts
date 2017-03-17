@@ -1,22 +1,21 @@
 /**
  * Created by Anushavan on 3/17/17.
  */
-import {Order} from "./order";
+import {Dish} from "./dish";
 
 export class OrderDetail {
     
-    private order: Order;
+    private dish: Dish;
     private count: number;
     
     constructor() { }
 
-
-    public getOrder(): Order {
-        return this.order;
+    public getDish(): Dish {
+        return this.dish;
     }
 
-    public setOrder(order: Order) {
-        this.order = order;
+    public setDish(dish: Dish) {
+        this.dish = dish;
     }
 
     public getCount(): number {

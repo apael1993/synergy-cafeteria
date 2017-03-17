@@ -2,7 +2,7 @@
  * Created by Anushavan on 3/17/17.
  */
 import {Customer} from "./customer";
-import {Dish} from "./dish";
+import {OrderDetail} from "./order-detail";
 
 export class Order {
 
@@ -11,7 +11,7 @@ export class Order {
     private date: Date;
     private totalPrice: number;
     private customer: Customer;
-    private dishes: Array<Dish>;
+    private orderDetails: Array<OrderDetail>;
     
     public constructor() { }
 
@@ -55,12 +55,12 @@ export class Order {
         this.customer = customer;
     }
 
-    public getDishes(): Array<Dish> {
-        return this.dishes;
+    public getDishes(): Array<OrderDetail> {
+        return this.orderDetails;
     }
 
-    public setDishes(dishes: Array<Dish>) {
-        this.dishes = dishes;
+    public setDishes(orderDetails: Array<OrderDetail>) {
+        this.orderDetails = orderDetails;
     }
     
 }
