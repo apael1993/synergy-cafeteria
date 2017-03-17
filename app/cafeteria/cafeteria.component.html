@@ -1,9 +1,16 @@
-<h3>Synergy's Cafeteria</h3>
-<nav>
-    <a (click)="navigateTo('order-processing')">Order Processing</a>
-    <a (click)="navigateTo('standard-menu')">Standard Menu</a>
-    <a (click)="navigateTo('custom-menu')">Custom Menu</a>
-    <a (click)="navigateTo('today-deals')">Today Deals</a>
-    <a (click)="navigateTo('my-orders')">My Orders</a>
-</nav>
+<sis-tabs [selectedTabId]="0">
+    <sis-tab id="0" title="Standard Menu">
+        <standard-menu></standard-menu>
+    </sis-tab>
+    <sis-tab id="1" title="Custom Processing">
+        <custom-menu></custom-menu>
+    </sis-tab>
+    <sis-tab id="2" title="Today Deals">
+        <today-deals></today-deals>
+    </sis-tab>
+    <sis-tab id="3" title="My Orders">
+        <my-orders></my-orders>
+    </sis-tab>
+</sis-tabs>
+
 <router-outlet></router-outlet>
