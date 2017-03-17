@@ -4,7 +4,6 @@
 import {Component, OnInit} from "@angular/core";
 import {DataServiceImpl} from "../../shared/impl/data.service.impl";
 import {Order} from "../../shared/model/order";
-import {DataServiceImpl} from "../../shared/impl/data.service.impl";
 
 @Component({
     moduleId: module.id,
