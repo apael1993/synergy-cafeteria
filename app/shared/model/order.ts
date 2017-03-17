@@ -55,11 +55,11 @@ export class Order {
         this.customer = customer;
     }
 
-    public getDishes(): Array<OrderDetail> {
+    public getOrderDetail(): Array<OrderDetail> {
         return this.orderDetails;
     }
 
-    public setDishes(orderDetails: Array<OrderDetail>) {
+    public setOrderDetail(orderDetails: Array<OrderDetail>) {
         this.orderDetails = orderDetails;
     }
     
