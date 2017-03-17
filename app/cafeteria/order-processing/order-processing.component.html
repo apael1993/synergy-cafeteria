@@ -1,0 +1,11 @@
+<div *ngIf="order && dishTypes">
+    <h2>Order #{{order.getNumber()}}</h2>
+
+    <div *ngFor="let dishType in dishTypes">
+        <div *ngFor="let orderDetail in order.getOrderDetails()">
+            <div *ngIf="orderDetail.getDish().getDishType().getId() === dishType.getId()">
+                {{orderDetail.getDish().getName()}}: {{orderDetail.getCount()}}
+            </div>
+        </div>
+    </div>
+</div>

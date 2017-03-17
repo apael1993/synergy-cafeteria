@@ -4,6 +4,7 @@
 import {Component, OnInit} from "@angular/core";
 import {DataServiceImpl} from "../../shared/impl/data.service.impl";
 import {Order} from "../../shared/model/order";
+import {DishType} from "../../shared/model/dish-type";
 
 @Component({
     moduleId: module.id,
@@ -15,6 +16,7 @@ import {Order} from "../../shared/model/order";
 export class OrderProcessingComponent implements OnInit {
     
     private order: Order;
+    private dishTypes: Array<DishType>;
 
     constructor(private dataService: DataServiceImpl) { }
     
@@ -23,6 +25,10 @@ export class OrderProcessingComponent implements OnInit {
             .subscribe((order: Order) => {
                 this.order = order;
             });
+        this.dataService.loadDishTypes()
+            .subscribe((dishTypes: Array<DishType>) => {
+            this.dishTypes = dishTypes;
+        })
     }
     
 }

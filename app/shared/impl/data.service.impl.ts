@@ -8,6 +8,7 @@ import {DataService} from "../api/data.service";
 import {Order} from "./../model/order";
 import {Observable} from "rxjs/Rx";
 import {Dish} from "../model/dish";
+import {DishType} from "../model/dish-type";
 
 @Injectable()
 export class DataServiceImpl implements DataService {
@@ -39,7 +40,7 @@ export class DataServiceImpl implements DataService {
         return null;
     }
 
-    public loadDishTypes(): Observable<any>{
+    public loadDishTypes(): Observable<Array<DishType>>{
         return null;
     }
 
