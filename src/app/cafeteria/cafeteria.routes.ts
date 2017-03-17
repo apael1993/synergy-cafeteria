@@ -7,7 +7,7 @@ import {CafeteriaComponent} from "./cafeteria.component.ts";
 
 const cafeteriaRoutes: Routes = [
         {
-            path: "customer",
+            path: "cafeteria",
             component: CafeteriaComponent
         }
  ];

@@ -3,18 +3,18 @@
  */
 import {RouterModule, Routes} from "@angular/router";
 import {ModuleWithProviders} from "@angular/core";
-import {CustomerComponent} from ".//demo.component";
+import {CafeteriaComponent} from "./cafeteria/cafeteria.component";
 
  const appRoutes: Routes = [
 
      {
          path: "",
-         redirectTo: "customer",
+         redirectTo: "cafeteria",
          pathMatch: 'full'
      },
      {
-         path: "customer",
-         component: CustomerComponent,
+         path: "cafeteria",
+         component: CafeteriaComponent,
      }
 ];
 
