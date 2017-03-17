@@ -16,10 +16,6 @@ const cafeteriaRoutes: Routes = [
         component: CafeteriaComponent,
         children: [
             {
-                path: "order-processing",
-                component: OrderProcessingComponent
-            },
-            {
                 path: "standard-menu",
                 component: StandardMenuComponent
             },
@@ -36,6 +32,10 @@ const cafeteriaRoutes: Routes = [
                 component: MyOrdersComponent
             }
         ]
+    },
+    {
+        path: "order-processing",
+        component: OrderProcessingComponent
     }
  ];
 
