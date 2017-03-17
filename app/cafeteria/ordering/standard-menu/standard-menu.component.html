@@ -1,0 +1,20 @@
+<sis-tabs [selectedTabId]="0">
+    <sis-tab id="0" title="dishType.name" *ngFor="let dishType of getDishTypes()">
+        <item-view-in-menu id="itemView{{dish.getId()}}"
+                           [dish]="dish"
+                           (selectedCount)="f($event)"
+                           *ngFor="let dish of getDishes(dishType.getId())">
+        </item-view-in-menu>
+    </sis-tab>
+    <sis-tab id="1" title="Custom Processing">
+        <custom-menu></custom-menu>
+    </sis-tab>
+    <sis-tab id="2" title="Today Deals">
+        <today-deals></today-deals>
+    </sis-tab>
+    <sis-tab id="3" title="My Orders">
+        <my-orders></my-orders>
+    </sis-tab>
+
+
+<router-outlet></router-outlet>

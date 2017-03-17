@@ -9,6 +9,7 @@
             // our app is within the app folder
             app: 'app',
             // angular bundles
+            'ng2-modal': "node_modules/ng2-modal",
             '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
             '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
             '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
@@ -29,7 +30,11 @@
             },
             'rxjs': {
                 defaultExtension: 'js'
-            }
+            },
+
+            'ng2-modal': {
+                main: "index.js",
+                defaultExtension: "js" }
         }
     });
 })(this);

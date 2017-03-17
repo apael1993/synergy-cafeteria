@@ -14,11 +14,14 @@ import {CustomMenuComponent} from "./ordering/custom-menu/custom-menu.component"
 import {TodayDealsComponent} from "./ordering/today-deals/today-deals.component";
 import {TabsComponent} from "../shared/controls/tabs/sis-tabs.component";
 import {TabComponent} from "../shared/controls/tabs/sis-tab.component";
+import {HeaderComponent} from "./header/header.component";
+import {ItemViewInMenuComponent} from "./ordering/shared/item-view-in-menu/item-view-in-menu.component";
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
+        ModalModule,
         cafeteriaRouting
     ],
     declarations: [
@@ -30,7 +33,10 @@ import {TabComponent} from "../shared/controls/tabs/sis-tab.component";
         CustomMenuComponent,
         TodayDealsComponent,
         TabComponent,
-        TabsComponent
+        TabsComponent,
+        HeaderComponent,
+        StandardMenuComponent,
+        ItemViewInMenuComponent
     ],
 })
 
