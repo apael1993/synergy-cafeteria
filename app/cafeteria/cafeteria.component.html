@@ -1,8 +1,9 @@
-<h1>Synergy's Cafeteria</h1>
+<h3>Synergy's Cafeteria</h3>
 <nav>
     <a (click)="navigateTo('order-processing')">Order Processing</a>
-    <a (click)="navigateTo('order-processing')">Standard Menu</a>
-    <a (click)="navigateTo('order-processing')">Custom Menu</a>
-    <a (click)="navigateTo('order-processing')">Today Deals</a>
-    <a (click)="navigateTo('order-processing')">My Orders</a>
+    <a (click)="navigateTo('standard-menu')">Standard Menu</a>
+    <a (click)="navigateTo('custom-menu')">Custom Menu</a>
+    <a (click)="navigateTo('today-deals')">Today Deals</a>
+    <a (click)="navigateTo('my-orders')">My Orders</a>
 </nav>
+<router-outlet></router-outlet>

@@ -3,16 +3,20 @@
  */
 import {NgModule}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {HttpModule} from "@angular/http";
 import {FormsModule} from "@angular/forms";
 import {AppComponent}  from './app.component';
 import {routing, appRoutingProviders} from "./app.routes";
 import {CafeteriaModule} from "./cafeteria/cafeteria.module";
+import {DataServiceImpl} from "./shared/impl/data.service.impl";
+import {DeSerializationService} from "./shared/impl/serialization.service";
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
         CafeteriaModule,
+        HttpModule,
         routing,
     ],
     declarations: [
@@ -20,6 +24,8 @@ import {CafeteriaModule} from "./cafeteria/cafeteria.module";
     ],
     providers: [
         appRoutingProviders,
+        DataServiceImpl,
+        DeSerializationService
     ],
     bootstrap:    [ AppComponent ]
 })
