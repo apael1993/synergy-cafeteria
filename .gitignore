@@ -7,6 +7,6 @@ node_modules
 *.log
 
 # Transpilation results
-src/app/**/*.js
-src/app/**/*.js.map
-src/app/**/*.d.ts
+src/**/*.js
+src/**/*.js.map
+src/**/*.d.ts

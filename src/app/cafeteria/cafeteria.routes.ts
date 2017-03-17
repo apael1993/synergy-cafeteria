@@ -1,0 +1,15 @@
+/**
+ * Created by Anushavan on 3/17/17.
+ */
+import {Routes, RouterModule} from "@angular/router";
+import {ModuleWithProviders} from "@angular/core";
+import {CafeteriaComponent} from "./cafeteria.component.ts";
+
+const cafeteriaRoutes: Routes = [
+        {
+            path: "customer",
+            component: CafeteriaComponent
+        }
+ ];
+
+export const cafeteriaRouting: ModuleWithProviders = RouterModule.forChild(cafeteriaRoutes);
