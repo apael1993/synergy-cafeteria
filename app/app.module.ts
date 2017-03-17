@@ -9,7 +9,7 @@ import {AppComponent}  from './app.component';
 import {routing, appRoutingProviders} from "./app.routes";
 import {CafeteriaModule} from "./cafeteria/cafeteria.module";
 import {DataServiceImpl} from "./shared/impl/data.service.impl";
-import {DeSerializationService} from "./shared/impl/serialization.service";
+import {SerializationService} from "./shared/impl/serialization.service";
 
 @NgModule({
     imports: [
@@ -25,7 +25,7 @@ import {DeSerializationService} from "./shared/impl/serialization.service";
     providers: [
         appRoutingProviders,
         DataServiceImpl,
-        DeSerializationService
+        SerializationService
     ],
     bootstrap:    [ AppComponent ]
 })

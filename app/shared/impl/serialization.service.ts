@@ -8,9 +8,10 @@ import {OrderDetail} from "../model/order-detail";
 import {DishType} from "../model/dish-type";
 import {Dish} from "../model/dish";
 import {Observable} from "rxjs/Rx";
+import forEach = require("core-js/fn/array/for-each");
 
 @Injectable()
-export class DeSerializationService {
+export class SerializationService {
 
     constructor() { }
 
@@ -29,7 +30,7 @@ export class DeSerializationService {
         order.setDate(data["order-created-date"]);
         order.setTotalPrice(data["total-price"]);
         order.setCustomer(this.deserializeCustomer(data["customer"]));
-        order.setOrderDetail(this.deserializeOrderDetails(data["order-details"]));
+        order.setOrderDetails(this.deserializeOrderDetails(data["order-details"]));
 
         return order;
     }
@@ -81,6 +82,38 @@ export class DeSerializationService {
         return dishType;
     }
 
+    public serializeOrder(order: Order): any {
+        let data: any = {};
+        let customer: Customer = order.getCustomer();
+        let orderDetails: Array<any> = order.getOrderDetails()
+            .map((orderDetail: OrderDetail) => {
+                let dish: Dish = orderDetail.getDish();
+                return {
+                    "_id": dish.getId,
+                    "name": dish.getName(),
+                    "price": dish.getPrice(),
+                    "image-path": dish.getImagePath(),
+                    "count": orderDetail.getCount(),
+                    "dish-type": {
+                        "_id": dish.getDishType().getId,
+                        "name": dish.getDishType().getName()
+                    }
+                }
+            });
 
+        data["_id"] = order.getId();
+        data["order-number"] = order.getNumber();
+        data["order-created-date"] = new Date();
+        data["total-price"] = order.getTotalPrice();
+        data["customer"] = {
+            "_id": customer.getId(),
+            "first-name": customer.getFirstName(),
+            "last-name": customer.getLastName(),
+            "company": customer.getCompany()
+        };
+        data["order-details"] = orderDetails;
+
+        return data;
+    }
 
 }

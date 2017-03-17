@@ -3,7 +3,7 @@
  */
 import {Injectable} from "@angular/core";
 import {Http, Headers, RequestOptions, Response} from "@angular/http";
-import {DeSerializationService} from "./serialization.service";
+import {SerializationService} from "./serialization.service";
 import {DataService} from "../api/data.service";
 import {Order} from "./../model/order";
 import {Observable} from "rxjs/Rx";
@@ -14,7 +14,7 @@ import {DishType} from "../model/dish-type";
 export class DataServiceImpl implements DataService {
 
     constructor(private http: Http,
-                private deSerializationService: DeSerializationService) { }
+                private serializationService: SerializationService) { }
 
     public loadOrder(): Observable<Order> {
         let headers: Headers = new Headers({'Content-Type': 'application/json'});
@@ -22,18 +22,34 @@ export class DataServiceImpl implements DataService {
         let options = new RequestOptions({headers: headers});
 
         let order$: Observable<any> = this.http
-            .get("", options)               // TODO: will be added end point;
+            .get("/orders/next", options)
             .map(DataServiceImpl.extractResponseData);
 
-        return this.deSerializationService.deserializeOrder(order$);
+        return this.serializationService.deserializeOrder(order$);
     }
 
-    public addOrder(data: any): Observable<Order> {
-        return null;
+    public addOrder(order: Order): Observable<Order> {
+        let data: any = this.serializationService.serializeOrder(order);
+        let body = JSON.stringify(data);
+
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let options = new RequestOptions({headers: headers});
+
+        return this.http
+            .post("/orders", body, options)
+            .map(DataServiceImpl.extractResponseData);
     }
 
     public updateOrder(data: any): Observable<Order> {
-        return null;
+        let headers: Headers = new Headers({'Content-Type': 'application/json'});
+
+        let options = new RequestOptions({headers: headers});
+
+        let order$: Observable<any> = this.http
+            .put(`/orders/${data["_id"]}`, options)
+            .map(DataServiceImpl.extractResponseData);
+
+        return this.serializationService.deserializeOrder(order$);
     }
 
     public deleteOrder(): Observable<any> {

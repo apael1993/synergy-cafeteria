@@ -32,7 +32,12 @@ export class OrderProcessingComponent implements OnInit {
     }
 
     private nextOrder(): void {
-        this.dataService.updateOrder({"_id": this.order.getId()});
+        this.dataService.updateOrder({
+                "_id": this.order.getId()
+            })
+            .subscribe((order: Order) => {
+                this.order = order;
+            });
     }
 
 }
