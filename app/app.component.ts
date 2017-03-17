@@ -4,7 +4,7 @@
 import {Component} from "@angular/core";
 
 @Component({
-    moduleId:module.id,
+    moduleId: module.id,
     selector: "sis-app",
     templateUrl: "app.component.html",
     styleUrls: ["app.component.css"]

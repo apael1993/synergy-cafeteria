@@ -9,6 +9,7 @@ import {Component} from "@angular/core";
     templateUrl: "cafeteria.component.html",
     styleUrls: ["cafeteria.component.css"],
 })
+
 export class CafeteriaComponent {
 
     constructor() { }

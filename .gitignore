@@ -4,9 +4,16 @@
 
 # NPM generated
 node_modules
+typings
 *.log
 
 # Transpilation results
-src/**/*.js
-src/**/*.js.map
-src/**/*.d.ts
+app/**/*.js
+app/**/*.js.map
+app/**/*.d.ts
+app/**/*.css
+
+# for  index.ts  file
+index.d.ts
+index.js
+index.js.map

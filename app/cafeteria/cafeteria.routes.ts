@@ -3,7 +3,7 @@
  */
 import {Routes, RouterModule} from "@angular/router";
 import {ModuleWithProviders} from "@angular/core";
-import {CafeteriaComponent} from "./cafeteria.component.ts";
+import {CafeteriaComponent} from "./cafeteria.component";
 
 const cafeteriaRoutes: Routes = [
         {

@@ -4,8 +4,8 @@
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
-import {CafeteriaComponent} from "./cafeteria.component.ts";
-import {cafeteriaRouting} from "./cafeteria.routes.ts";
+import {CafeteriaComponent} from "./cafeteria.component";
+import {cafeteriaRouting} from "./cafeteria.routes";
 
 
 @NgModule({

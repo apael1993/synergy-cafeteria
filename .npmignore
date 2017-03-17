@@ -4,6 +4,7 @@
 
 # NPM generated
 node_modules
+typings
 
 *.log
 .npmignore
