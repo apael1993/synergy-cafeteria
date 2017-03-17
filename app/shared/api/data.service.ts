@@ -8,14 +8,12 @@ import {Observable} from "rxjs/Rx";
  */
 export abstract class DataService {
 
-    public URL_ORDER_LOAD_LAST: string;
+    public abstract loadOrder(): Observable<any>;
     
-    public abstract load(url: string): Observable<any>;
+    public abstract addOrder(data: any): Observable<any>;
 
-    public abstract add(url: string, data: any): Observable<any>;
+    public abstract updateOrder(data: any): Observable<any>;
 
-    public abstract update(url: string, data: any): Observable<any>;
-
-    public abstract delete(url: string): Observable<any>;
+    public abstract deleteOrder(): Observable<any>;
 
 }

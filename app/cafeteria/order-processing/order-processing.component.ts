@@ -2,7 +2,8 @@
  * Created by Anushavan on 3/17/17.
  */
 import {Component, OnInit} from "@angular/core";
-import {DeService} from "./../../shared/impl/de.service";
+import {DataServiceImpl} from "../../shared/impl/data.service.impl.ts";
+import {Order} from "../../shared/model/order";
 
 @Component({
     moduleId: module.id,
@@ -15,10 +16,13 @@ export class OrderProcessingComponent implements OnInit {
     
     private order: Order;
 
-    constructor(private deService: DeService) { }
+    constructor(private dataService: DataServiceImpl) { }
     
     ngOnInit() {
-        
+        this.dataService.loadOrder()
+            .subscribe((order: Order) => {
+                this.order = order;
+            });
     }
     
 }
