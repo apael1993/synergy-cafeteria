@@ -6,61 +6,61 @@ import {Dish} from "./dish";
 
 export class Order {
 
-    private _id: number;
-    private _number: number;
-    private _date: Date;
-    private _totalPrice: number;
-    private _customer: Customer;
-    private _orders: Array<Dish>;
+    private id: number;
+    private number: number;
+    private date: Date;
+    private totalPrice: number;
+    private customer: Customer;
+    private dishes: Array<Dish>;
     
     public constructor() { }
 
     public getId(): number {
-        return this._id;
+        return this.id;
     }
 
-    public setId(value: number) {
-        this._id = value;
+    public setId(id: number) {
+        this.id = id;
     }
 
     public getNumber(): number {
-        return this._number;
+        return this.number;
     }
 
-    public setNumber(value: number) {
-        this._number = value;
+    public setNumber(number: number) {
+        this.number = number;
     }
 
     public getDate(): Date {
-        return this._date;
+        return this.date;
     }
 
-    public setDate(value: Date) {
-        this._date = value;
+    public setDate(date: Date) {
+        this.date = date;
     }
 
     public getTotalPrice(): number {
-        return this._totalPrice;
+        return this.totalPrice;
     }
 
-    public setTotalPrice(value: number) {
-        this._totalPrice = value;
+    public setTotalPrice(totalPrice: number) {
+        this.totalPrice = totalPrice;
     }
 
     public getCustomer(): Customer {
-        return this._customer;
+        return this.customer;
     }
 
-    public setCustomer(value: Customer) {
-        this._customer = value;
+    public setCustomer(customer: Customer) {
+        this.customer = customer;
     }
 
-    public getOrders(): Array<Dish> {
-        return this._orders;
+    public getDishes(): Array<Dish> {
+        return this.dishes;
     }
 
-    public setOrders(value: Array<Dish>) {
-        this._orders = value;
+    public setDishes(dishes: Array<Dish>) {
+        this.dishes = dishes;
     }
     
 }

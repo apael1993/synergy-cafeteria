@@ -1,6 +1,7 @@
 /**
  * Created by Anushavan on 3/17/17.
  */
+import {DishType} from "./dish-type";
 
 export class Dish {
 
@@ -8,6 +9,7 @@ export class Dish {
     private name: string;
     private price: number;
     private imagePath: string;
+    private dishType: DishType;
     
     public constructor() { }
 
@@ -43,4 +45,11 @@ export class Dish {
         this.imagePath = imagePath;
     }
 
+    public getDishType(): DishType {
+        return this.dishType;
+    }
+
+    public setDishType(dishType: DishType) {
+        this.dishType = dishType;
+    }
 }
