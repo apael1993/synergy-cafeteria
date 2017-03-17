@@ -12,7 +12,6 @@ import {cafeteriaRouting} from "./cafeteria.routes.ts";
     imports: [
         CommonModule,
         FormsModule,
-        ControlsModule,
         cafeteriaRouting
     ],
     declarations: [
