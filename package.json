@@ -1,7 +1,7 @@
 {
-  "name": "@synisys/ng-controls",
-  "description": "Synergy Angular 2 Component Library",
-  "version": "1.0.0-alpha-41",
+  "name": "@synisys/cafeteria",
+  "description": "Synergy Smart Bussiness Center Cafeteria",
+  "version": "1.0.0",
   "main": "main.js",
   "typings": "main",
   "license": "ISC",
