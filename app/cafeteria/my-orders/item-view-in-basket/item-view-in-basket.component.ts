@@ -7,22 +7,21 @@ import {OrderDetail} from "../../../shared/model/order-detail";
 
 @Component({
     moduleId: module.id,
-    selector: "item-view-in-menu",
-    templateUrl: "item-view-in-menu.component.html",
-    styleUrls: ["item-view-in-menu.component.css"],
+    selector: "item-view-in-basket",
+    templateUrl: "item-view-in-basket.component.html",
+    styleUrls: ["item-view-in-basket.component.css"],
 })
 
 export class ItemViewInBasketComponent implements AfterContentInit {
-    @Input("dish")
-    private _dish:Dish;
 
     private _itemId: number;
-
     private _itemName: string;
     private _itemImagePath: string;
     private _price: number;
-
     private _itemCount: number = 1;
+
+    @Input("dish")
+    private _dish:Dish;
 
     get itemId(): number {
         return this._itemId;
@@ -78,7 +77,7 @@ export class ItemViewInBasketComponent implements AfterContentInit {
     }
 
     private orderDetailsFromString(json:string):Array<OrderDetail>{
-        return null;
+        return JSON.parse(json);
     }
 
 
