@@ -1,1 +1,10 @@
-<h2>Will be implemented</h2>
+<sis-tabs [selectedTabId]="0">
+    <sis-tab id="0" title="dishType.name" *ngFor="let dishType of getDishTypes()">
+        <item-view-in-menu id="itemView{{dish.getId()}}"
+                           [dish]="dish"
+                           (selectedCount)="f($event)"
+                           *ngFor="let dish of getDishes(dishType.getId())">
+        </item-view-in-menu>
+    </sis-tab>
+</sis-tabs>
+<button ></button>

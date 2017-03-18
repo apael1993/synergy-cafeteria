@@ -1,6 +1,6 @@
 import {Component, OnInit, Input, AfterContentInit, Output, EventEmitter} from "@angular/core";
-import {Dish} from "../../../../shared/model/dish";
-import {OrderDetail} from "../../../../shared/model/order-detail";
+import {Dish} from "../../../shared/model/dish";
+import {OrderDetail} from "../../../shared/model/order-detail";
 /**
  * Created by Home on 3/17/2017.
  */
@@ -12,7 +12,7 @@ import {OrderDetail} from "../../../../shared/model/order-detail";
     styleUrls: ["item-view-in-menu.component.css"],
 })
 
-export class ItemViewInMenuComponent implements OnInit, AfterContentInit {
+export class ItemViewInBasketComponent implements OnInit, AfterContentInit {
     @Input("dish")
     private _dish:Dish;
 
@@ -23,9 +23,6 @@ export class ItemViewInMenuComponent implements OnInit, AfterContentInit {
     private _price: number;
 
     private _itemCount: number = 1;
-
-    @Output() selectedCount: EventEmitter<number> = new EventEmitter<number>();
-
 
     get itemId(): number {
         return this._itemId;
@@ -75,16 +72,6 @@ export class ItemViewInMenuComponent implements OnInit, AfterContentInit {
         this.selectedCount.emit(1);
     }
 
-    addItemInOrderList():void{
-      let orders: Array<OrderDetail>  = this.orderDetailsFromString(localStorage.getItem("orderList"));
-      let orderDetail: OrderDetail = new OrderDetail();
-      orderDetail.setDish(this.dish);
-      orderDetail.setCount(this._itemCount);
-      orders.push(orderDetail);
-        localStorage.setItem("orderList",JSON.stringify(orders));
-
-    }
-
     removeItemFromOrderList():void{
         let orders: Array<OrderDetail>  = this.orderDetailsFromString(localStorage.getItem("orderList"));
         let orderDetail: OrderDetail = new OrderDetail();
@@ -98,7 +85,7 @@ export class ItemViewInMenuComponent implements OnInit, AfterContentInit {
     }
 
     private orderDetailsFromString(json:string):Array<OrderDetail>{
-        return JSON.parse(json);
+        return null;
     }
 
 
