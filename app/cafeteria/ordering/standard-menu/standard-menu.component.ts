@@ -14,37 +14,29 @@ import {DataServiceImpl} from "../../../shared/impl/data.service.impl";
     styleUrls: ["standard-menu.component.css"],
 })
 
-export class StandardMenuComponent implements OnInit{
-     private availableDishesInStandardMenuByDishTypeId: Dish[] = [];
-     private disheTypes: DishType[] = [];
+export class StandardMenuComponent implements OnInit {
 
-     private dishes: Dish[] = [];
+    private dishTypes: Array<DishType>;
+    private dishes: Map<number, Array<Dish>>;
 
-     constructor(private dataService: DataServiceImpl) {
-         dataService.loadDishTypes().
-                            subscribe((_dishTypes:DishType[]) => {
+    constructor(private dataService: DataServiceImpl) { }
 
-         })
-     }
+    ngOnInit(): void {
+        this.dataService.loadDishTypes()
+            .subscribe((dishTypes: Array<DishType>) => {
+                this.dishTypes = dishTypes;
+                this.initializeDishesMap();
+            });
+    }
 
+    private initializeDishesMap(): void {
+        this.dishes = new Map<number, Array<Dish>>();
+        this.dishTypes.forEach((dishType: DishType) => {
+            this.dataService.loadDishesByType(dishType.getId())
+                .subscribe((dishes: Array<Dish>) => {
+                    this.dishes.set(dishType.getId(), dishes);
+                })
+        })
+    }
 
-     ngOnInit(): void {
-
-     }
-
-     getDishTypes(): DishType[]{
-      return [];
-     }
-
-     getDishes(dishTypeId:number): Dish[]{
-         let dishes:Dish[] = [];
-         return [];
-     }
-
-     private f(dishCount: number) {
-
-     }
-
-
-    
 }

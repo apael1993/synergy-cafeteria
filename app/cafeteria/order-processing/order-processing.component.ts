@@ -27,8 +27,8 @@ export class OrderProcessingComponent implements OnInit {
             });
         this.dataService.loadDishTypes()
             .subscribe((dishTypes: Array<DishType>) => {
-            this.dishTypes = dishTypes;
-        })
+                this.dishTypes = dishTypes;
+            });
     }
 
     private nextOrder(): void {

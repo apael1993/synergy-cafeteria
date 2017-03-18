@@ -1,12 +1,10 @@
-<sis-tabs [selectedTabId]="0">
-    <sis-tab id="0" title="dishType.name" *ngFor="let dishType of getDishTypes()">
-        <item-view-in-menu id="itemView{{dish.getId()}}"
-                           [dish]="dish"
-                           (selectedCount)="f($event)"
-                           *ngFor="let dish of getDishes(dishType.getId())">
-        </item-view-in-menu>
-    </sis-tab>
-</sis-tabs>
-
-
-<router-outlet></router-outlet>
+<div *ngIf="dishTypes">
+    <sis-tabs [selectedTabId]="0">
+        <sis-tab id="0" title="dishType.name" *ngFor="let dishType of dishTypes">
+            <item-view-in-menu id="itemView{{dish.getId()}}"
+                               [dish]="dish"
+                               *ngFor="let dish of dishes.get(dishType.getId())">
+            </item-view-in-menu>
+        </sis-tab>
+    </sis-tabs>
+</div>
