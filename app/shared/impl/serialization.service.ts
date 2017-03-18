@@ -102,7 +102,7 @@ export class SerializationService {
 
         data["_id"] = order.getId();
         data["order-number"] = order.getNumber();
-        data["order-created-date"] = new Date();
+        data["order-created-date"] = order.getDate();
         data["total-price"] = order.getTotalPrice();
         data["customer"] = {
             "_id": customer.getId(),

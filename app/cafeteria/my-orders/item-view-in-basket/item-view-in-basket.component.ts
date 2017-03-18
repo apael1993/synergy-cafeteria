@@ -1,9 +1,9 @@
-import {Component, OnInit, Input, AfterContentInit, Output, EventEmitter} from "@angular/core";
-import {Dish} from "../../../shared/model/dish";
-import {OrderDetail} from "../../../shared/model/order-detail";
 /**
  * Created by Home on 3/17/2017.
  */
+import {Component, Input, AfterContentInit} from "@angular/core";
+import {Dish} from "../../../shared/model/dish";
+import {OrderDetail} from "../../../shared/model/order-detail";
 
 @Component({
     moduleId: module.id,
@@ -64,7 +64,7 @@ export class ItemViewInBasketComponent implements AfterContentInit {
 
     }
 
-    removeItemFromOrderList():void{
+    removeItemFromOrderList(): void {
         let orders: Array<OrderDetail>  = this.orderDetailsFromString(localStorage.getItem("orderList"));
         let orderDetail: OrderDetail = new OrderDetail();
         orderDetail.setDish(this.dish);
@@ -76,11 +76,8 @@ export class ItemViewInBasketComponent implements AfterContentInit {
 
     }
 
-    private orderDetailsFromString(json:string):Array<OrderDetail>{
+    private orderDetailsFromString(json: string): Array<OrderDetail> {
         return JSON.parse(json);
     }
-
-
-
 
 }
