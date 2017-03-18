@@ -12,7 +12,7 @@ import {OrderDetail} from "../../../shared/model/order-detail";
     styleUrls: ["item-view-in-menu.component.css"],
 })
 
-export class ItemViewInBasketComponent implements OnInit, AfterContentInit {
+export class ItemViewInBasketComponent implements AfterContentInit {
     @Input("dish")
     private _dish:Dish;
 
@@ -37,7 +37,6 @@ export class ItemViewInBasketComponent implements OnInit, AfterContentInit {
         return this._itemImagePath;
     }
 
-
     get price(): number {
         return this._price;
     }
@@ -52,7 +51,6 @@ export class ItemViewInBasketComponent implements OnInit, AfterContentInit {
 
     set itemCount(value: number) {
         this._itemCount = value;
-        this.selectedCount.emit(this._itemCount);
     }
 
     get itemCount(): number{
@@ -65,11 +63,6 @@ export class ItemViewInBasketComponent implements OnInit, AfterContentInit {
         this._itemImagePath = this._dish.getImagePath();
         this._price = this._dish.getPrice();
 
-    }
-
-
-    ngOnInit(): void {
-        this.selectedCount.emit(1);
     }
 
     removeItemFromOrderList():void{

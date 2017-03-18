@@ -4,7 +4,6 @@
 import {Component, OnInit} from "@angular/core";
 import {DishType} from "../../../shared/model/dish-type";
 import {Dish} from "../../../shared/model/dish";
-import {ItemViewInMenuComponent} from "../shared/item-view-in-menu/item-view-in-menu.component";
 import {DataServiceImpl} from "../../../shared/impl/data.service.impl";
 
 @Component({
