@@ -13,6 +13,8 @@ import {DishType} from "../model/dish-type";
 @Injectable()
 export class DataServiceImpl implements DataService {
 
+    private CAFETERIA_SERVICE_URI: string = "";
+
     constructor(private http: Http,
                 private serializationService: SerializationService) { }
 
@@ -22,7 +24,7 @@ export class DataServiceImpl implements DataService {
         let options = new RequestOptions({headers: headers});
 
         let order$: Observable<any> = this.http
-            .get("/orders/next", options)
+            .get(`${this.CAFETERIA_SERVICE_URI}/orders/next`, options)
             .map(DataServiceImpl.extractResponseData);
 
         return this.serializationService.deserializeOrder(order$);
@@ -36,7 +38,7 @@ export class DataServiceImpl implements DataService {
         let options = new RequestOptions({headers: headers});
 
         return this.http
-            .post("/orders", body, options)
+            .post(`${this.CAFETERIA_SERVICE_URI}/orders`, body, options)
             .map(DataServiceImpl.extractResponseData);
     }
 
@@ -46,18 +48,34 @@ export class DataServiceImpl implements DataService {
         let options = new RequestOptions({headers: headers});
 
         let order$: Observable<any> = this.http
-            .put(`/orders/${data["_id"]}`, options)
+            .put(`${this.CAFETERIA_SERVICE_URI}/orders/${data["_id"]}`, options)
             .map(DataServiceImpl.extractResponseData);
 
         return this.serializationService.deserializeOrder(order$);
     }
 
     public loadDishTypes(): Observable<Array<DishType>> {
-        return null;
+        let headers: Headers = new Headers({'Content-Type': 'application/json'});
+
+        let options = new RequestOptions({headers: headers});
+
+        let dishTypes$: Observable<any> = this.http
+            .get(`${this.CAFETERIA_SERVICE_URI}/dishtypes`, options)
+            .map(DataServiceImpl.extractResponseData);
+
+        return this.serializationService.deserializeDishTypes(dishTypes$);
     }
 
-    public loadDishesByType(dishTypeId: any): Observable<Array<Dish>> {
-        return null;
+    public loadDishesByType(dishTypeId: number): Observable<Array<Dish>> {
+        let headers: Headers = new Headers({'Content-Type': 'application/json'});
+
+        let options = new RequestOptions({headers: headers});
+
+        let dishes$: Observable<any> = this.http
+            .get(`${this.CAFETERIA_SERVICE_URI}/dishtypes/${dishTypeId}/dishes`, options)
+            .map(DataServiceImpl.extractResponseData);
+
+        return this.serializationService.deserializeDishes(dishes$);
     }
 
     private static extractResponseData(response: Response): any {

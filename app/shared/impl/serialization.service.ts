@@ -115,5 +115,21 @@ export class SerializationService {
 
         return data;
     }
+    
+    public deserializeDishTypes(dishTypes$: Observable<any>): Observable<Array<DishType>> {
+        return dishTypes$.map((data: any) => {
+            return data.map((dataItem: any) => {
+                return this.deserializeDishType(dataItem);
+            })
+        });
+    }
+    
+    public deserializeDishes(dishes$: Observable<any>): Observable<Array<Dish>> {
+        return dishes$.map((data: any) => {
+            return data.map((dataItem: any) => {
+                return this.deserializeDish(dataItem);
+            })
+        });
+    }
 
 }
