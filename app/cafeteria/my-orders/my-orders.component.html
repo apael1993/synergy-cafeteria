@@ -1,5 +1,5 @@
- <item-view-in-menu id="itemView{{dish.getId()}}Basket"
-                           [dish]="orderDetail.dish"
-                           *ngFor="let orderDetail of orders">
- </item-view-in-menu>
-<button type="button" (click)="saveOrder()"></button>
+<item-view-in-menu id="itemView{{dish.getId()}}Basket"
+                   [dish]="orderDetail.dish"
+                   *ngFor="let orderDetail of orders">
+</item-view-in-menu>
+<button type="button" (click)="saveOrder()">Save</button>

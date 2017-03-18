@@ -5,10 +5,10 @@ import {Injectable} from "@angular/core";
 import {Http, Headers, RequestOptions, Response} from "@angular/http";
 import {SerializationService} from "./serialization.service";
 import {DataService} from "../api/data.service";
-import {Order} from "./../model/order";
-import {Observable} from "rxjs/Rx";
+import {Order} from "../model/order";
 import {Dish} from "../model/dish";
 import {DishType} from "../model/dish-type";
+import {Observable} from "rxjs/Rx";
 
 @Injectable()
 export class DataServiceImpl implements DataService {
