@@ -74,6 +74,10 @@ export class ItemViewInMenuComponent implements OnInit, AfterContentInit {
         this.selectedCount.emit(1);
     }
 
+    addItemInList():void{
+
+    }
+
 
 
 
