@@ -9,7 +9,6 @@
             // our app is within the app folder
             app: 'app',
             // angular bundles
-            'ng2-modal': "node_modules/ng2-modal",
             '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
             '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
             '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
@@ -20,7 +19,8 @@
             '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
             // other libraries
             'rxjs':                      'npm:rxjs',
-            'angular-in-memory-web-api': 'node_modules/angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+            'angular-in-memory-web-api': 'node_modules/angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+            'ng2-modal': "node_modules/ng2-modal"
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -31,10 +31,10 @@
             'rxjs': {
                 defaultExtension: 'js'
             },
-
             'ng2-modal': {
                 main: "index.js",
-                defaultExtension: "js" }
+                defaultExtension: "js"
+            }
         }
     });
 })(this);

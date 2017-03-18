@@ -16,6 +16,7 @@ import {TabsComponent} from "../shared/controls/tabs/sis-tabs.component";
 import {TabComponent} from "../shared/controls/tabs/sis-tab.component";
 import {HeaderComponent} from "./header/header.component";
 import {ItemViewInMenuComponent} from "./ordering/shared/item-view-in-menu/item-view-in-menu.component";
+import {ModalModule} from "ng2-modal/index";
 
 @NgModule({
     imports: [
@@ -35,7 +36,6 @@ import {ItemViewInMenuComponent} from "./ordering/shared/item-view-in-menu/item-
         TabComponent,
         TabsComponent,
         HeaderComponent,
-        StandardMenuComponent,
         ItemViewInMenuComponent
     ],
 })

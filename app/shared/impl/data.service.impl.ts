@@ -52,19 +52,13 @@ export class DataServiceImpl implements DataService {
         return this.serializationService.deserializeOrder(order$);
     }
 
-    public deleteOrder(): Observable<any> {
+    public loadDishTypes(): Observable<Array<DishType>> {
         return null;
     }
 
-    public loadDishTypes(): Observable<Array<DishType>>{
+    public loadDishesByType(dishTypeId: any): Observable<Array<Dish>> {
         return null;
     }
-
-    public loadDishesByType(_dishTypeId: any): Observable<Dish[]>{
-        return null;
-    }
-
-
 
     private static extractResponseData(response: Response): any {
         let body: any = response.json();

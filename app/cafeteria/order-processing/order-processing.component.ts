@@ -4,6 +4,7 @@
 import {Component, OnInit} from "@angular/core";
 import {Order} from "../../shared/model/order";
 import {DishType} from "../../shared/model/dish-type";
+import {DataServiceImpl} from "../../shared/impl/data.service.impl";
 
 @Component({
     moduleId: module.id,

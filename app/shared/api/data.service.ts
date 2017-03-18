@@ -1,4 +1,7 @@
 import {Observable} from "rxjs/Rx";
+import {Order} from "../model/order";
+import {DishType} from "../model/dish-type";
+import {Dish} from "../model/dish";
 
 /**
  * A class-interface to define some commons of a service providing access to the data.
@@ -8,8 +11,14 @@ import {Observable} from "rxjs/Rx";
  */
 export abstract class DataService {
 
-    public abstract loadOrder(): Observable<any>;
+    public abstract loadOrder(): Observable<Order>;
 
-    public abstract updateOrder(data: any): Observable<any>;
+    public abstract addOrder(order: Order): Observable<Order>;
 
+    public abstract updateOrder(data: any): Observable<Order>;
+
+    public abstract loadDishTypes(): Observable<Array<DishType>>;
+
+    public abstract loadDishesByType(dishTypeId: any): Observable<Array<Dish>>;
+    
 }
