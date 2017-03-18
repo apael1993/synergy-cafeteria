@@ -8,7 +8,8 @@ import {DataService} from "../api/data.service";
 import {Order} from "../model/order";
 import {Dish} from "../model/dish";
 import {DishType} from "../model/dish-type";
-import {Observable} from "rxjs/Rx";
+import 'rxjs/add/operator/map';
+import {Observable} from "rxjs";
 
 @Injectable()
 export class DataServiceImpl implements DataService {
