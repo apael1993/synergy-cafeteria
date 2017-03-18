@@ -19,6 +19,6 @@ export abstract class DataService {
 
     public abstract loadDishTypes(): Observable<Array<DishType>>;
 
-    public abstract loadDishesByType(dishTypeId: dishTypeId): Observable<Array<Dish>>;
+    public abstract loadDishesByType(dishTypeId: number): Observable<Array<Dish>>;
     
 }

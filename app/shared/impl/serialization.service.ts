@@ -8,7 +8,6 @@ import {OrderDetail} from "../model/order-detail";
 import {DishType} from "../model/dish-type";
 import {Dish} from "../model/dish";
 import {Observable} from "rxjs/Rx";
-import forEach = require("core-js/fn/array/for-each");
 
 @Injectable()
 export class SerializationService {
