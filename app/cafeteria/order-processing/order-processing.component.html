@@ -4,6 +4,7 @@
     <div *ngFor="let dishType of dishTypes">
         <div *ngFor="let orderDetail of order.getOrderDetails()">
             <div *ngIf="orderDetail.getDish().getDishType().getId() === dishType.getId()">
+                <img src="orderDetail.getDish().getImagePath()"/>
                 {{orderDetail.getDish().getName()}}: {{orderDetail.getCount()}}
             </div>
         </div>
